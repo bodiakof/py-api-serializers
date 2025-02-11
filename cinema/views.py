@@ -20,7 +20,7 @@ from cinema.serializers import (
 class MovieViewSet(ModelViewSet):
     queryset = Movie.objects.all()
 
-    def get_queryset(self) -> queryset:
+    def get_queryset(self) -> queryset[Movie]:
         queryset = self.queryset
         if self.action in (
             "list",
@@ -50,7 +50,7 @@ class GenreViewSet(ModelViewSet):
 class MovieSessionViewSet(ModelViewSet):
     queryset = MovieSession.objects.all()
 
-    def get_queryset(self) -> queryset:
+    def get_queryset(self) -> queryset[MovieSession]:
         queryset = self.queryset
         if self.action in (
             "list",
